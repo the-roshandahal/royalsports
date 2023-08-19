@@ -1,12 +1,35 @@
 {% load static %}
 <style>
-    *{
-        margin:0;
-        padding:0;
-    }
+    body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-container {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
 </style>
-<img src="{% static 'banner.jpg' %}" alt="banner image" style="width: 100%;">
-<img src="{% static 'banner.jpg' %}" alt="banner image" style="width: 100%;">
-<img src="{% static 'banner.jpg' %}" alt="banner image" style="width: 100%;">
-<img src="{% static 'banner.jpg' %}" alt="banner image" style="width: 100%;">
-<img src="{% static 'banner.jpg' %}" alt="banner image" style="width: 100%;">
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Sprots</title>
+</head>
+<body>
+  <div class="centered-container">
+    <img src="{% static 'banner.jpg' %}" alt="Centered Image">
+  </div>
+</body>
+</html>
