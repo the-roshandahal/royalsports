@@ -13,6 +13,7 @@ urlpatterns = [
     path("gallery", views.gallery, name="gallery"),
     path("gallery_details/<int:id>", views.gallery_details, name="gallery_details"),
     path("participation", views.participation, name="participation"),
+    path("events", views.events, name="events"),
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

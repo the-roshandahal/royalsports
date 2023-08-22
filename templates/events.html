@@ -1,0 +1,36 @@
+{% include "header.html" %} {% load static %}
+<section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img" data-background="{% static 'assets/images/bg/bg-12.png' %}" style="    background-color: black !important;"></section>
+<section class="subscribe-section ptb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 text-center">
+                <div class="section-header aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                    <h2 class="section-title">OUR <span>EVENTS</span> </h2>
+                </div>
+            </div>
+        </div>
+        {% for event in events %}
+        <div class="subscribe-area mb-5" style="background-color: #c39322;">
+            <div class="subscribe-element">
+                <img src="{% static 'assets/images/element/element-22.png' %}" alt="element">
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="subscribe-thumb aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                        <img src="{{event.image.url}}" alt="element" style="border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="subscribe-content aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
+                        <div class="section-header white">
+                            <h2 class="section-title">{{event.title}}</h2>
+                            <p>{{event.description|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% include "footer.html" %}

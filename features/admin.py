@@ -27,6 +27,12 @@ admin.site.register(Participation,ParticipationAdmin)
 
 
 
+class EventAdmin(SummernoteModelAdmin):
+    summernote_fields = ('description',) 
+admin.site.register(Event,EventAdmin)
+
+
+
 
 class RcsAdmin(SummernoteModelAdmin):
     summernote_fields = ('bottom_text','booking_details2','booking_details1') 

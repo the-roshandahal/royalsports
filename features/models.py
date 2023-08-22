@@ -46,14 +46,14 @@ class HomeContent(models.Model):
 
 class Slider(models.Model):
     image = models.ImageField(upload_to="slider_images",verbose_name="Image (1920*1080)")
-    heading_text = models.CharField(max_length=200) 
     sub_heading_text = models.CharField(max_length=200) 
-    button_text = models.CharField(max_length=50)
-    button_url = models.URLField()
+    # heading_text = models.CharField(max_length=200) 
+    # button_text = models.CharField(max_length=50)
+    # button_url = models.URLField()
     def __str__(self):
-        return self.heading_text
+        return self.sub_heading_text
     class Meta:
-        verbose_name_plural = "04. Slider" 
+        verbose_name_plural = "03. Banner Image" 
 
 
 
@@ -66,7 +66,7 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        verbose_name_plural = "06. Blogs" 
+        verbose_name_plural = "04. Blogs" 
 
 
 
@@ -82,7 +82,7 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        verbose_name_plural = "06. Testimonials" 
+        verbose_name_plural = "05. Testimonials" 
 
 
 class Partner(models.Model):
@@ -108,7 +108,7 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
     class Meta:
-        verbose_name_plural = "05. Contact"
+        verbose_name_plural = "07. Contact"
 
 
 
@@ -123,7 +123,7 @@ class JoinRcs(models.Model):
     def __str__(self):
         return self.data_set
     class Meta:
-        verbose_name_plural = "06. Join RCS Page Content" 
+        verbose_name_plural = "08. Join RCS Page Content" 
 
 
 class Participation(models.Model):
@@ -134,7 +134,7 @@ class Participation(models.Model):
     def __str__(self):
         return self.title
     class Meta:
-        verbose_name_plural = "06. Participation and Honours" 
+        verbose_name_plural = "09. Participation and Honours" 
 
 
 
@@ -143,6 +143,9 @@ class Gallery(models.Model):
     
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name_plural = "10. Gallery" 
 
 class GalleryImage(models.Model):
     gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE)
@@ -150,3 +153,16 @@ class GalleryImage(models.Model):
     
     def __str__(self):
         return f"Image in {self.gallery.title}"
+    
+
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="join_images/",verbose_name="Featured Image (954*774)")
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "11. Events" 

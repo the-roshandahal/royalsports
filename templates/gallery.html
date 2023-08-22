@@ -18,7 +18,6 @@
                         {% if forloop.first %}
                             <img src="{{ image.image.url }}" alt="training">
                         {% else %}
-                            <!-- <img data-src="{{ image.image.url }}" data-ll-status="loaded" alt="training" class="lazyload"> -->
                         {% endif %}
                         {% if forloop.counter == 1 %}
                             {# Only the first image is handled, then break out of the loop #}

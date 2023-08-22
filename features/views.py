@@ -71,3 +71,11 @@ def participation(request):
         'participations':participations
     }
     return render(request,'participation.html',context)
+
+
+def events(request):
+    events = Event.objects.all()
+    context = {
+        'events':events
+    }
+    return render(request,'events.html',context)
