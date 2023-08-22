@@ -161,32 +161,32 @@ $('.faq-wrapper .faq-title').on('click', function (e) {
 });
 
 // slider
-var swiper = new Swiper('.banner-slider', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: true,
-  effect: "fade",
-  navigation: {
-    nextEl: '.slider-next',
-    prevEl: '.slider-prev',
-  },
-  autoplay: {
-    speeds: 2000,
-    delay: 2000,
-  },
-  speed: 1000,
-  breakpoints: {
-    991: {
-      slidesPerView: 1,
-    },
-    767: {
-      slidesPerView: 1,
-    },
-    575: {
-      slidesPerView: 1,
-    },
-  }
-});
+// var swiper = new Swiper('.banner-slider', {
+//   slidesPerView: 1,
+//   spaceBetween: 0,
+//   loop: true,
+//   effect: "fade",
+//   navigation: {
+//     nextEl: '.slider-next',
+//     prevEl: '.slider-prev',
+//   },
+//   autoplay: {
+//     speeds: 2000,
+//     delay: 2000,
+//   },
+//   speed: 1000,
+//   breakpoints: {
+//     991: {
+//       slidesPerView: 1,
+//     },
+//     767: {
+//       slidesPerView: 1,
+//     },
+//     575: {
+//       slidesPerView: 1,
+//     },
+//   }
+// });
 
 var swiper = new Swiper('.feature-slider', {
   slidesPerView: 3,
