@@ -3420,7 +3420,19 @@ section {
     [ ## Introduction ]
 --------------------------------------------------------------*/
 .banner-section {
-  height: 95vh;
+  position: relative;
+  padding-top: 234px;
+  /* padding-bottom: 190px; */
+  padding-left: 200px;
+  padding-right: 200px;
+  background-color: white;
+  overflow: hidden;
+  z-index: 9;
+}
+
+
+.banner-section-homepage {
+  height:95vh;
   position: relative;
   padding-top: 234px;
   /* padding-bottom: 190px; */
