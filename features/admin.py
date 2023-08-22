@@ -12,12 +12,20 @@ admin.site.unregister(User)
 admin.site.register(Slider)
 admin.site.register(Testimonial)
 admin.site.register(Partner)
+admin.site.register(Contact)
 
 
 class BlogAdmin(SummernoteModelAdmin):
     list_display = ('title', 'created')
     summernote_fields = ('blog',) 
 admin.site.register(Blog,BlogAdmin)
+
+
+
+
+class RcsAdmin(SummernoteModelAdmin):
+    summernote_fields = ('bottom_text','booking_details2','booking_details1') 
+admin.site.register(JoinRcs,RcsAdmin)
 
 class ReadOnlyModelAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):

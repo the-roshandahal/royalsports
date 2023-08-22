@@ -93,3 +93,34 @@ class Partner(models.Model):
         return self.name
     class Meta:
         verbose_name_plural = "06. Partner" 
+
+
+
+
+class Contact(models.Model):
+    name = models.TextField()
+    email = models.TextField()
+    contact = models.TextField()
+    subject = models.TextField(null=True, blank=True)
+    message = models.TextField()
+    created = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        verbose_name_plural = "05. Contact"
+
+
+
+class JoinRcs(models.Model):
+    data_set = models.CharField(max_length=200)
+    heading_image = models.ImageField(upload_to="join_images/",verbose_name="Heading Image (1920*800)")
+    court_image = models.ImageField(upload_to="join_images/",verbose_name="Court Image (1920*800)")
+    booking_details1 = models.TextField()
+    booking_details2 = models.TextField()
+    bottom_text = models.TextField()
+    
+    def __str__(self):
+        return self.data_set
+    class Meta:
+        verbose_name_plural = "06. Join RCS Page Content" 

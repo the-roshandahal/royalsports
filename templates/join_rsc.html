@@ -1,0 +1,180 @@
+{% include "header.html" %} {% load static %}
+<section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img" data-background="{% static 'assets/images/bg/bg-12.png' %}" style="    background-color: black !important;"></section>
+<section>
+    <img src="{{rcs.heading_image.url}}" alt="" style="width: 100%;">
+</section>
+
+<section class="contact-item-section ptb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 text-center">
+                <div class="section-header">
+                    <h2 class="section-title">Welcome to<br><span> Royal Sports Central</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="plan-area change-subs-duration">
+            <div class="row justify-content-center mb-30-none">
+                
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 mb-30">
+                    <div class="plan-item">
+                        <div class="plan-content">
+                            <div class="plan-header">
+                                <div class="plan-badge-area">
+                                    <span class="plan-badge red">Morning</span>
+                                </div>
+                            </div>
+                            <div class="plan-price-area">
+                                <h2 class="price-title">NA</h2>
+                            </div>
+                        </div>
+                        <div class="plan-footer">
+                            <a href="#0">
+                                <h3 class="title">Coming Soon</h3>
+                                <div class="plan-btn"><i class="fas fa-angle-right"></i></div>
+                            </a>
+                        </div>
+                        <div class="plan-overlay">
+                            <img src="{% static 'pricebg.jpg' %}" alt="element">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 mb-30">
+                    <div class="plan-item">
+                        <div class="plan-content">
+                            <div class="plan-header">
+                                <div class="plan-badge-area">
+                                    <span class="plan-badge red">Day</span>
+                                </div>
+                            </div>
+                            <div class="plan-price-area">
+                                <h2 class="price-title"><sup>Rs.</sup>TBD<sub>/day</sub></h2>
+                            </div>
+                            <ul class="plan-list">
+                                <li>4:00 PM to 6:00 PM</li>
+                                <li>Sunday - Saturday</li>
+                                <li>Location: Boudha, Xavier International College Court.</li>
+                            </ul>
+                        </div>
+                        <div class="plan-footer">
+                            <a href="#0">
+                                <h3 class="title">Coming Soon</h3>
+                                <div class="plan-btn"><i class="fas fa-angle-right"></i></div>
+                            </a>
+                        </div>
+                        <div class="plan-overlay">
+                            <img src="{% static 'pricebg.jpg' %}" alt="element">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 mb-30">
+                    <div class="plan-item">
+                        <div class="plan-content">
+                            <div class="plan-header">
+                                <div class="plan-badge-area">
+                                    <span class="plan-badge red">Evening</span>
+                                </div>
+                            </div>
+                            <div class="plan-price-area">
+                                <h2 class="price-title"><sup>Rs.</sup>TBD<sub>/day</sub></h2>
+                            </div>
+                            <ul class="plan-list">
+                                <li>5:00 PM to 7:00 PM</li>
+                                <li>Sunday - Friday</li>
+                                <li>Location: Sana Gaun, Lalitpur Nepal.</li>
+                            </ul>
+                        </div>
+                        <div class="plan-footer">
+                            <a href="#0">
+                                <h3 class="title">Book Now</h3>
+                                <div class="plan-btn"><i class="fas fa-angle-right"></i></div>
+                            </a>
+                        </div>
+                        <div class="plan-overlay">
+                            <img src="{% static 'pricebg.jpg' %}" alt="element">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="call-to-action-section ptb-120 bg-overlay-black bg_img" data-background="{% static 'assets/images/bg/bg-4.png' %}" style="background-image: url({% static 'assets/images/bg/bg-4.png' %});">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-8 text-center">
+                <div class="call-to-action-content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                    <h2 class="title">Private or Personal Training Available.</h2>
+                    <p>Basketball Court Booking Available.</p>
+                    <div class="call-to-action-btn">
+                        <a href="{% url 'contact' %}" class="btn--base">Contact Us <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <img src="{{rcs.court_image.url}}" alt="" style="width: 100%;">
+</section>
+
+
+
+<section class="contact-item-section ptb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 text-center">
+                <div class="section-header">
+                    <h2 class="section-title">Booking Details<br><span></span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="plan-area change-subs-duration">
+            <div class="row justify-content-center mb-30-none">
+                <style>
+                    .about-item p{
+                        color:black;
+                    }
+                </style>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
+                    <div class="about-item">
+                        
+                        <div class="about-content">
+                            <h4 class="title" style="color: #d9b45b;">Daily Basis</h4>
+                            <p>{{rcs.booking_details1|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
+                    <div class="about-item">
+                        <div class="about-content" >
+                            <h4 class="title" style="color: #d9b45b;">Monthly Basis</h4>
+                            <p>{{rcs.booking_details2|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="plan-area change-subs-duration mt-5">
+            <div class="row justify-content-center mb-30-none">
+                <style>
+                    .about-item p{
+                        color:black;
+                    }
+                </style>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-30">
+                    <div class="about-item">
+                        
+                        <div class="about-content">
+                            <h4 class="title" style="color: #d9b45b;">Notes</h4>
+                            <p>{{rcs.bottom_text|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include "footer.html" %}

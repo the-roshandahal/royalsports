@@ -1,0 +1,122 @@
+{% include "header.html" %} {% load static %}
+<section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img" data-background="{% static 'assets/images/bg/bg-12.png' %}" style="    background-color: black !important;"></section>
+
+<section class="contact-item-section ptb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 text-center">
+                <div class="section-header">
+                    <h2 class="section-title">Ready to Get More <span>Information</span></h2>
+                    <p>There were twelve rules in all, and they specified that fights should be "a fair stand-up boxing match" in a 24-foot-square or similar ring. Rounds were three minutes with one-minute rest.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-30-none">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
+                <div class="contact-item">
+                    <div class="contact-icon-area">
+                        <div class="contact-icon">
+                            <img src="{% static 'assets/images/icon/icon-64.png' %}" alt="icon">
+                        </div>
+                    </div>
+                    <div class="contact-content">
+                        <h4 class="title">OFFICE ADRESS</h4>
+                        <p>{{data.location}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
+                <div class="contact-item">
+                    <div class="contact-icon-area">
+                        <div class="contact-icon">
+                            <img src="{% static 'assets/images/icon/icon-65.png' %}" alt="icon">
+                        </div>
+                    </div>
+                    <div class="contact-content">
+                        <h4 class="title">TELEPHONE NUMBER</h4>
+                        <p>{{data.contact}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
+                <div class="contact-item">
+                    <div class="contact-icon-area">
+                        <div class="contact-icon">
+                            <img src="{% static 'assets/images/icon/icon-66.png' %}" alt="icon">
+                        </div>
+                    </div>
+                    <div class="contact-content">
+                        <h4 class="title">SEND MAIL</h4>
+                        <p>{{data.email}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="account-widget-section account-widget-section-two account-widget-section--style ptb-120">
+    <div class="container">
+        <div class="row justify-content-center align-items-center mb-60-none">
+            <div class="col-xl-6 col-lg-6 mb-60">
+                <div class="account-widget-left">
+                    <div class="section-header">
+                        <h2 class="section-title">Any Question? Feel
+                            Free to <span>Contact</span> with Us!</h2>
+                        <p>If you have any questions or need more information, please use the form below to send us a message There were twelve rules in all, and they specified that fights should be "a fair stand-up boxing match" in a 24-foot-square or similar ring. </p>
+                    </div>
+                    <div class="contact-social-area">
+                        <span>FOLLOW US -</span>
+                        <ul class="contact-social">
+                            <li><a href="{{data.facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{data.instagram_url}}"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="{{data.youtube_url}}"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 mb-60">
+                <div class="account-widget-form-area">
+                    <form class="account-widget-form" method="POST" action = "{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="row justify-content-center mb-25-none">
+                            <div class="col-xl-12 form-group">
+                                <input type="text" class="form--control" placeholder="Your Name*" name="name">
+                            </div>
+                            <div class="col-xl-12 form-group">
+                                <input type="email" class="form--control" placeholder="Your Email*" name="email">
+                            </div>
+                            <div class="col-xl-12 form-group">
+                                <input type="text" class="form--control" placeholder="Your Phone*" name="contact">
+                            </div>
+                            <div class="col-xl-12 form-group">
+                                <input type="text" class="form--control" placeholder="Subject*" name="subject">
+                            </div>
+                            <div class="col-xl-12 form-group">
+                                <textarea class="form--control" placeholder="Your Message*" name="message"></textarea>
+                            </div>
+                            <div class="col-xl-12 form-group">
+                                <button type="submit" class="btn--base">Send Now <i class="fas fa-arrow-right ml-2"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="map-section ">
+    <div class="">
+        <div class="row justify-content-center mb-5-none">
+            <div class="col-xl-12">
+                <div class="map-area">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.1899657893728!2d90.42380431666383!3d23.779746865573756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7499f257eab%3A0xe6b4b9eacea70f4a!2sManama+Tower!5e0!3m2!1sen!2sbd!4v1561542597668!5m2!1sen!2sbd" style="border:0" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "footer.html" %}
