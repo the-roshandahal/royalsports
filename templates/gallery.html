@@ -1,0 +1,39 @@
+{% load static %}{% include "header.html" %}
+<section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img" data-background="{% static 'assets/images/bg/bg-12.png' %}" style="    background-color: black !important;"></section>
+<section class="training-section training-section--style ptb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 text-center">
+                <div class="section-header aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                    <h2 class="section-title">OUR <span>GALLERY</span> </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-30-none">
+            {% for gallery in gallerys %}
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
+                <div class="training-item aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="training-thumb">
+                        {% for image in gallery.galleryimage_set.all %}
+                        {% if forloop.first %}
+                            <img src="{{ image.image.url }}" alt="training">
+                        {% else %}
+                            <!-- <img data-src="{{ image.image.url }}" data-ll-status="loaded" alt="training" class="lazyload"> -->
+                        {% endif %}
+                        {% if forloop.counter == 1 %}
+                            {# Only the first image is handled, then break out of the loop #}
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="training-content">
+                        <h3 class="title" style="height: 48px;"><a href="{% url 'gallery_details' id=gallery.id %}">{{ gallery.title }}</a></h3>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+{% include "footer.html" %}

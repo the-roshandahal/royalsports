@@ -38,22 +38,28 @@ def contact(request):
         return render(request,'contact_us.html')
 
 def join_rsc(request):
-    if request.method == "POST":
-        name = request.POST['name']
-        email = request.POST['email']
-        contact = request.POST['contact']
-        subject = request.POST['subject']
-        message = request.POST['message']
-        contact_obj = Contact.objects.create( name=name,email=email,contact=contact,subject=subject,message=message)
-        contact_obj.save()
-        return redirect('contact')
-    else:
-        try:
-            rcs = JoinRcs.objects.all()[:1].get()
-        except JoinRcs.DoesNotExist:
-            rcs = None
-        
-        context = {
-            'rcs':rcs
-        }
-        return render(request,'join_rsc.html',context)
+    try:
+        rcs = JoinRcs.objects.all()[:1].get()
+    except JoinRcs.DoesNotExist:
+        rcs = None
+    
+    context = {
+        'rcs':rcs
+    }
+    return render(request,'join_rsc.html',context)
+
+
+def gallery(request):
+    gallerys = Gallery.objects.all()
+    context = {
+        'gallerys':gallerys
+    }
+    return render(request,'gallery.html',context)
+
+
+def gallery_details(request,id):
+    gallery = Gallery.objects.get(id=id)
+    context = {
+        'gallery':gallery
+    }
+    return render(request,'gallery_details.html',context)

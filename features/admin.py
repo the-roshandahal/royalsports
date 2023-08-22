@@ -47,3 +47,18 @@ class CompanySetupAdmin(ReadOnlyModelAdmin):
 @admin.register(HomeContent)
 class HomeContentAdmin(ReadOnlyModelAdmin):
     pass
+
+
+
+
+
+
+
+class ImageInline(admin.TabularInline):
+    model = GalleryImage
+    extra = 1 
+
+class GalleryAdmin(admin.ModelAdmin):
+    inlines = [ImageInline]
+
+admin.site.register(Gallery, GalleryAdmin)

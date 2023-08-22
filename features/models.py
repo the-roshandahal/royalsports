@@ -124,3 +124,20 @@ class JoinRcs(models.Model):
         return self.data_set
     class Meta:
         verbose_name_plural = "06. Join RCS Page Content" 
+
+
+
+
+
+class Gallery(models.Model):
+    title = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.title
+
+class GalleryImage(models.Model):
+    gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='gallery_images/',verbose_name="Heading Image (370*307)")
+    
+    def __str__(self):
+        return f"Image in {self.gallery.title}"
