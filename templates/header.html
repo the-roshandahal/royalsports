@@ -1,0 +1,51 @@
+{% load static %} {% include "nav_links.html" %}
+<body>
+   
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Start Header
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <header class="header-section header-section-two">
+        <div class="header">
+            <div class="header-bottom-area">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="{{data.color_logo.url}}" alt="site-logo" style="height: 80px;">
+                            </div>
+                            <div class="col-6 d-flex justify-content-end">
+                                <ul class="footer-social">
+                                    <li><a href="{{data.facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{{data.instagram_url}}"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="{{data.youtube_url}}"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-menu-content mt-3">
+                        <nav class="navbar navbar-expand-xl p-0">
+                            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="fas fa-bars"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav main-menu ml-auto mr-auto">
+                                    <li><a href="{% url 'home' %}">JOIN RSC</a></li>
+                                    <li><a href="{% url 'home' %}">PARTICIPATION AND HONOURS</a></li>
+                                    
+                                    <li><a href="{% url 'home' %}">EVENTS</a></li>
+                                    <li><a href="{% url 'home' %}">GALLERY</a></li>
+                                    <li><a href="{% url 'home' %}">CONTACT US</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        End Header
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  

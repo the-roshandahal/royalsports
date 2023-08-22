@@ -1,35 +1,255 @@
-{% load static %}
-<style>
-    body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .centered-container {
-    max-width: 100%;
-    text-align: center;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-</style>
-  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Royal Sprots</title>
-</head>
-<body>
-  <div class="centered-container">
-    <img src="{% static 'banner.jpg' %}" alt="Centered Image">
-  </div>
-</body>
-</html>
+{% load static %} {% include "header.html" %}
+   
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Start Banner
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section class="banner">
+        <div class="slider-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="slider-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="banner-slider">
+            <div class="swiper-wrapper">
+
+                {% for slider in sliders %}
+                  
+                <div class="swiper-slide">
+                    <div class="banner-section banner-section-two">
+                        <div class="banner-bg bg-overlay-black bg_img" data-background="{{slider.image.url}}"></div>
+                        <div class="container-fluid">
+                            <div class="row justify-content-center align-items-end mb-30-none">
+                                <div class="col-xl-12 col-lg-12 text-center mb-30">
+                                    <div class="banner-content" data-aos="fade-up" data-aos-duration="1800">
+                                        <span class="sub-title">{{slider.heading_text}}</span>
+                                        <h3 class="inner-title">{{slider.sub_heading_text}}</h3>
+                                        <div class="banner-btn">
+                                            <a href="{{slider.button_url}}" class="btn--base">{{slider.button_text}} <i class="fas fa-arrow-right ml-2"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        End Banner
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section class="about-section about-section--style ptb-120">
+        <div class="container">
+            <div class="row justify-content-center align-items-center mb-30-none">
+                <div class="col-xl-6 col-lg-6 mb-30">
+                    <div class="about-thumb" style="padding: 50px;">
+                        <img src="{{home.header_image.url}}" alt="about" style="border-radius: 10px;">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 mb-30">
+                    <div class="about-content-area">
+                        <div class="section-header">
+                            <h2 class="section-title">ABOUT <span>ROYAL SPORTS</span> CENTRAL</h2>
+                            <p>{{home.header_text}}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-item-area about-item-area-two pt-120">
+                <div class="row justify-content-center mb-30-none">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
+                        <div class="about-item">
+                            <div class="about-icon">
+                                <img src="{% static 'assets/images/icon/icon-24.png' %}" alt="icon">
+                            </div>
+                            <div class="about-content">
+                                <h4 class="title">MISSION</h4>
+                                <p>{{home.mission}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
+                        <div class="about-item">
+                            <div class="about-icon">
+                                <img src="{% static 'assets/images/icon/icon-25.png' %}" alt="icon">
+                            </div>
+                            <div class="about-content">
+                                <h4 class="title">VISION</h4>
+                                <p>{{home.vision}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-section ptb-120">
+        <div class="container">
+            <div class="section-header aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                <h2 class="section-title">OUR <span>NEWS/</span>UPDATES</h2>
+                <p>Fight School has specialized in martial arts since 1986 and has one of the most innovative programs in the nation.</p>
+            </div>
+            <div class="row justify-content-center mb-30-none">
+                <div class="col-xl-12 col-lg-12 mb-30">
+                    <div class="row justify-content-center mb-30-none">
+                        {% for blog in blogs %}
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mb-30">
+                            <div class="blog-item">
+                                <div class="blog-thumb">
+                                    <img src="{{blog.image.url}}" alt="blog">
+                                    <div class="blog-date">
+                                        <span>{{blog.created}}</span>
+                                    </div>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-post-meta">
+                                        <span class="user">By : Admin</span>
+                                    </div>
+                                    <h3 class="title"><a href="blog-details.html">{{blog.title}}</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="client-section ptb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-header-wrapper">
+                        <div class="section-header aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                            <h2 class="section-title">OUR <span>TESTIMONIALS</span> </h2>
+                            <p>Fight School has specialized in martial arts since 1986 and has one of the most innovative programs in the nation.</p>
+                        </div>
+                        <div class="slider-nav-area aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
+                            <div class="slider-prev" tabindex="0" role="button" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <div class="slider-next" tabindex="0" role="button" aria-label="Next slide">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="client-area">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="client-slider-two swiper-container-horizontal aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="swiper-wrapper" style="transform: translate3d(-1900px, 0px, 0px); transition-duration: 0ms;">
+                                
+                                
+                                {% for testimonial in testimonials %}
+
+                                <div class="swiper-slide" data-swiper-slide-index="0" style="width: 350px; margin-right: 30px;">
+                                    <div class="client-item">
+                                        <div class="client-header">
+                                            <div class="client-quote">
+                                                <img src="{% static 'assets/images/client/quote.png' %}" alt="client">
+                                            </div>
+                                            <div class="client-thumb">
+                                                <img src="{{testimonial.image.url}}" alt="client" style="border-radius: 90px;">
+                                            </div>
+                                        </div>
+                                        <div class="client-content">
+                                            <p>{{testimonial.testimonial}}</p>
+                                        </div>
+                                        <div class="client-footer">
+                                            <div class="client-footer-left">
+                                                <h4 class="title"><a href="#">{{testimonial.name}}</a></h4>
+                                                <span class="sub-title">{{testimonial.title}}</span>
+                                            </div>
+                                            <div class="client-footer-right">
+                                                <span class="ratings">
+                                                    {% if testimonial.stars == 1 %}
+                                                    <i class="fas fa-star"></i>
+                                                    {% endif %}
+                                                    {% if testimonial.stars == 2 %}
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    {% endif %}
+                                                    {% if testimonial.stars == 3 %}
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    {% endif %}
+                                                    {% if testimonial.stars == 4 %}
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    {% endif %}
+                                                    {% if testimonial.stars == 5 %}
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    {% endif %}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                
+                            </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-header-wrapper">
+                        <div class="section-header aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                            <h2 class="section-title">OUR PARTNERS</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                {% for partner in partners %}
+                <div class="col-2 ptb-20">
+                    <img src="{{partner.image.url}}" alt="Carousel Item" style="width: 94px;">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="map-section ">
+        <div class="">
+            <div class="row justify-content-center mb-5-none">
+                <div class="col-xl-12">
+                    <div class="map-area">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.1899657893728!2d90.42380431666383!3d23.779746865573756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7499f257eab%3A0xe6b4b9eacea70f4a!2sManama+Tower!5e0!3m2!1sen!2sbd!4v1561542597668!5m2!1sen!2sbd" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    {% include "footer.html" %}
