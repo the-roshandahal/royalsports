@@ -5608,13 +5608,13 @@ div[class*="col"]:nth-of-type(4n + 4) .trainer-item:hover {
   display: block;
   text-align: center;
   background-color: white;
-  box-shadow: 0 5px 15px rgba(232, 0, 0, 0.12);
+  box-shadow: 0 5px 15px rgba(163, 163, 162, 0.12);
   border-radius: 6px;
   padding: 30px;
   transition: all 0.5s;
 }
 .about-item-area-two .about-item:hover {
-  box-shadow: 0 15px 30px rgba(232, 0, 0, 0.17);
+  box-shadow: 0 15px 30px rgba(187, 240, 30, 0.17);
 }
 .about-item-area-two .about-item .about-icon {
   margin: 0 auto;

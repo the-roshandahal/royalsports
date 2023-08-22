@@ -21,6 +21,11 @@ class BlogAdmin(SummernoteModelAdmin):
 admin.site.register(Blog,BlogAdmin)
 
 
+class ParticipationAdmin(SummernoteModelAdmin):
+    summernote_fields = ('description',) 
+admin.site.register(Participation,ParticipationAdmin)
+
+
 
 
 class RcsAdmin(SummernoteModelAdmin):

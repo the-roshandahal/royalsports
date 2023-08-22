@@ -63,3 +63,11 @@ def gallery_details(request,id):
         'gallery':gallery
     }
     return render(request,'gallery_details.html',context)
+
+
+def participation(request):
+    participations = Participation.objects.all()
+    context = {
+        'participations':participations
+    }
+    return render(request,'participation.html',context)

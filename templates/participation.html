@@ -1,0 +1,40 @@
+{% include "header.html" %} {% load static %}
+<section class="banner-section " style="background-color: black !important;"></section>
+
+<section class="event-section event-section-two ptb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 text-center">
+                <div class="section-header">
+                    <h2 class="section-title">Royal Sports Central<br><span> Participations and Honours</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-60-none">
+            {% for participation in participations  %}              
+            <div class="col-xl-6 col-lg-6 mb-60">
+                <div class="event-item">
+                    <div class="event-thumb">
+                        <img src="{{participation.court_image.url}}" alt="event">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta-area">
+                            <!-- <div class="event-post-meta">
+                                <div class="event-location">
+                                    <span><i class="fas fa-map-marker-alt"></i> 684 Ann St.  FL 34608</span>
+                                </div>
+                                <div class="event-date">
+                                    <span><i class="fas fa-clock"></i> 12:00 am</span>
+                                </div>
+                            </div> -->
+                        </div>
+                        <h3 class="title"><a href="#">{{participation.title}}</a></h3>
+                        <p>{{participation.description|safe}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% include "footer.html" %}

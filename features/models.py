@@ -126,6 +126,15 @@ class JoinRcs(models.Model):
         verbose_name_plural = "06. Join RCS Page Content" 
 
 
+class Participation(models.Model):
+    title = models.CharField(max_length=255)
+    court_image = models.ImageField(upload_to="join_images/",verbose_name="Featured Image (570*400)")
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "06. Participation and Honours" 
 
 
 
