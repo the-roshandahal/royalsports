@@ -5,29 +5,29 @@
         Start Banner
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner">
-        <div class="slider-prev">
+        <!-- <div class="slider-prev">
             <i class="fas fa-chevron-left"></i>
         </div>
         <div class="slider-next">
             <i class="fas fa-chevron-right"></i>
-        </div>
+        </div> -->
         <div class="banner-slider">
             <div class="swiper-wrapper">
 
                 {% for slider in sliders %}
                   
                 <div class="swiper-slide">
-                    <div class="banner-section banner-section-two">
+                    <div class="banner-section banner-section-two banner-section-homepage">
                         <div class="banner-bg bg-overlay-black bg_img" data-background="{{slider.image.url}}"></div>
-                        <div class="container-fluid">
+                        <div class="banner-text-group">
                             <div class="row justify-content-center align-items-end mb-30-none">
                                 <div class="col-xl-12 col-lg-12 text-center mb-30">
-                                    <div class="banner-content" data-aos="fade-up" data-aos-duration="1800">
-                                        <span class="sub-title">{{slider.heading_text}}</span>
+                                    <div class="banner-content" data-aos="zoom-in-up" data-aos-duration="3000">
+                                        <!-- <span class="sub-title">{{slider.heading_text}}</span> -->
                                         <h3 class="inner-title">{{slider.sub_heading_text}}</h3>
-                                        <div class="banner-btn">
+                                        <!-- <div class="banner-btn">
                                             <a href="{{slider.button_url}}" class="btn--base">{{slider.button_text}} <i class="fas fa-arrow-right ml-2"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -237,8 +237,6 @@
     </section>
 
 
-    
-
 
     <section class="map-section ">
         <div class="">
@@ -252,4 +250,6 @@
         </div>
     </section>
 
+
+    
     {% include "footer.html" %}
