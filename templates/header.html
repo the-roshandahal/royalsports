@@ -1,46 +1,34 @@
 {% load static %} {% include "nav_links.html" %}
 <body>
-   
-    
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Start Header
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <header class="header-section header-section-two">
+    <header class="header-section header-section-two header-section-three">
         <div class="header">
             <div class="header-bottom-area">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-6">
-                            <a href="{% url 'home' %}">
-                                <img src="{{data.color_logo.url}}" alt="site-logo" style="height: 110px;">
-                            </a>
-                        </div>
-                        <div class="col-6 d-flex justify-content-end">
-                            <ul class="footer-social">
-                                <li><a href="{{data.facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="{{data.instagram_url}}"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="{{data.youtube_url}}"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="header-menu-content" style="margin-top: -60px; margin-bottom: 30px;">
+                    <div class="header-menu-content">
                         <nav class="navbar navbar-expand-xl p-0">
+                            <a class="site-logo site-title" href="index.html"><img src="{{data.color_logo.url}}" style="height: 110px;" alt="site-logo"></a>
                             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="fas fa-bars"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav main-menu ml-auto mr-auto">
+                                <ul class="navbar-nav main-menu">
                                     <li><a href="{% url 'home' %}">HOME</a></li>
                                     <li><a href="{% url 'join_rsc' %}">JOIN RSC</a></li>
-                                    <li><a href="{% url 'participation' %}">PARTICIPATION AND HONOURS</a></li>
-                                    <!-- <li><a href="{% url 'home' %}"><img src="{{data.color_logo.url}}" alt="site-logo" style="height: 120px;"></a></li> -->
-                                    
+                                    <li><a href="{% url 'participation' %}">PARTICIPATION AND HONOURS</a></li>                                    
                                     <li><a href="{% url 'events' %}">EVENTS</a></li>
                                     <li><a href="{% url 'gallery' %}">GALLERY</a></li>
                                     <li><a href="{% url 'contact' %}">CONTACT US</a></li>
                                 </ul>
+                                <div class="header-right" style="margin-left: 50px;">
+                                    <div class="header-action-area">
+                                        <ul class="footer-social">
+                                            <li><a href="{{data.facebook_url}}"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="{{data.instagram_url}}"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="{{data.youtube_url}}"><i class="fab fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </nav>
                     </div>
@@ -48,7 +36,5 @@
             </div>
         </div>
     </header>
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        End Header
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
   

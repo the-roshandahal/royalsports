@@ -1,5 +1,4 @@
 {% include "header.html" %} {% load static %}
-<section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img" data-background="{% static 'assets/images/bg/bg-12.png' %}" style="    background-color: black !important;"></section>
 
 <section class="banner">
     <!-- <div class="slider-prev">
@@ -129,26 +128,7 @@
 </section>
 
 
-<section class="call-to-action-section ptb-120 bg_img" data-background="{{rcs.court_image.url}}" style="background-image: url({{rcs.court_image.url}});">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-7 col-lg-8 text-center">
-                <div class="call-to-action-content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
-                    <h2 class="title">Basketball Court Booking Available.</h2>
-                    <div class="call-to-action-btn">
-                        <a href="{% url 'contact' %}" class="btn--base" s>Contact Us <i class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- 
-<section>
-    <img src="{{rcs.court_image.url}}" alt="" style="width: 100%;">
-</section> -->
-
-<section class="subscribe-section ptb-120">
+<section class="subscribe-section pb-120">
     <div class="container">
         <div class="subscribe-area">
             <div class="subscribe-element">
@@ -172,54 +152,66 @@
         </div>
     </div>
 </section>
-<section class="contact-item-section ptb-120">
+
+<section class="call-to-action-section ptb-120 bg_img" data-background="{{rcs.court_image.url}}" style="background-image: url({{rcs.court_image.url}});">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-10 col-lg-12 text-center">
-                <div class="section-header">
-                    <h2 class="section-title">Booking Details</h2>
-                </div>
-            </div>
-        </div>
-        <div class="plan-area change-subs-duration">
-            <div class="row justify-content-center mb-30-none">
-                <style>
-                    .about-item p{
-                        color:black;
-                    }
-                </style>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
-                    <div class="about-item">
-                        
-                        <div class="about-content">
-                            <h4 class="title" style="color: #d9b45b;">Daily Basis</h4>
-                            <p>{{rcs.booking_details1|safe}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
-                    <div class="about-item">
-                        <div class="about-content" >
-                            <h4 class="title" style="color: #d9b45b;">Monthly Basis</h4>
-                            <p>{{rcs.booking_details2|safe}}</p>
-                        </div>
+            <div class="col-xl-7 col-lg-8 text-center">
+                <div class="call-to-action-content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                    <h2 class="title">Basketball Court Booking Available.</h2>
+                    <div class="call-to-action-btn">
+                        <a href="{% url 'contact' %}" class="btn--base" s>Contact Us <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="plan-area change-subs-duration mt-5">
-            <div class="row justify-content-center mb-30-none">
-                <style>
-                    .about-item p{
-                        color:black;
-                    }
-                </style>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-30">
-                    <div class="about-item">
-                        
-                        <div class="about-content">
-                            <h4 class="title" style="color: #d9b45b;">Notes</h4>
-                            <p>{{rcs.bottom_text|safe}}</p>
+    </div>
+</section>
+<!-- 
+<section>
+    <img src="{{rcs.court_image.url}}" alt="" style="width: 100%;">
+</section> -->
+
+<section class="contact-item-section ptb-120">
+    <div class="container">
+        <div class="feature-widget-area feature-section-two feature-section--style feature-section--style-two">
+            <h2 class="widget-title">Booking Details</span></h2>
+            <div class="row justify-content-center">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="feature-item-area">
+                        <div class="row justify-content-center mb-30-none">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
+                                <div class="feature-item">
+                                    <div class="feature-content">
+                                        <h4 class="title"><span>01.</span> DAILY BASIS</h4>
+                                        <p>{{rcs.booking_details1|safe}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-30">
+                                <div class="feature-item">
+                                    <div class="feature-content">
+                                        <h4 class="title"><span>02.</span> MONTHLY BASIS</h4>
+                                        <p>{{rcs.booking_details2|safe}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="feature-item-area">
+                        <div class="row justify-content-center mb-30-none">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-30">
+                                <div class="feature-item">
+                                    <div class="feature-content">
+                                        <h4 class="title">NOTES</h4>
+                                        <p>{{rcs.bottom_text|safe}}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
