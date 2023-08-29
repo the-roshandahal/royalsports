@@ -45,11 +45,9 @@ class HomeContent(models.Model):
         
 
 class Slider(models.Model):
-    image = models.ImageField(upload_to="slider_images",verbose_name="Image (1920*1080)")
-    sub_heading_text = models.CharField(max_length=200) 
-    # heading_text = models.CharField(max_length=200) 
-    # button_text = models.CharField(max_length=50)
-    # button_url = models.URLField()
+    image = models.ImageField(upload_to="slider_images/desktop",verbose_name="Image (1920*1080)")
+    mobile_image = models.ImageField(upload_to="slider_images/mobile",verbose_name="Mobile Image (450*750)", null=True, blank=True)
+    sub_heading_text = models.CharField(max_length=200)
     def __str__(self):
         return self.sub_heading_text
     class Meta:
