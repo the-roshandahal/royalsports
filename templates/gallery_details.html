@@ -1,4 +1,87 @@
 {% load static %}{% include "header.html" %}
+
+<style>
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 100000; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+    
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+    
+    /* Caption of Modal Image */
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+    
+    /* Add Animation */
+    .modal-content, #caption {  
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+    
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)} 
+      to {-webkit-transform:scale(1)}
+    }
+    
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
+    
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+      .modal-content {
+        width: 100%;
+      }
+    }
+    </style>
+
+
 <section class="training-section training-section--style ptb-120">
     <div class="" style="margin-left: 10%; margin-right: 10%;">
         <div class="row justify-content-center">
@@ -9,19 +92,44 @@
             </div>
         </div>
         <div class="row justify-content-center mb-30-none">
-
             {% for image in gallery.galleryimage_set.all %}
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mb-30">
                 <div class="training-item aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1200">
                     <div class="training-thumb">
-                        <img src="{{ image.image.url }}" alt="training">
+                        <img src="{{ image.image.url }}" alt="{{gallery.title}}" id="popImg{{ forloop.counter }}">
                     </div>
                 </div>
             </div>
+            <div id="myModal{{ forloop.counter }}" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img{{ forloop.counter }}">
+                <div id="caption{{ forloop.counter }}"></div>
+            </div>
             {% endfor %}
-
-
         </div>
     </div>
 </section>
+
+
+<script>
+    {% for image in gallery.galleryimage_set.all %}
+    var modal{{ forloop.counter }} = document.getElementById("myModal{{ forloop.counter }}");
+    
+    var img{{ forloop.counter }} = document.getElementById("popImg{{ forloop.counter }}");
+    var modalImg{{ forloop.counter }} = document.getElementById("img{{ forloop.counter }}");
+    img{{ forloop.counter }}.onclick = function(){
+      modal{{ forloop.counter }}.style.display = "block";
+      modalImg{{ forloop.counter }}.src = this.src;
+    }
+    
+    var span{{ forloop.counter }} = document.getElementsByClassName("close")[{{ forloop.counter }} - 1];
+    
+    span{{ forloop.counter }}.onclick = function() { 
+      modal{{ forloop.counter }}.style.display = "none";
+    }
+    {% endfor %}
+  </script>
+  
+  
+  
 {% include "footer.html" %}
