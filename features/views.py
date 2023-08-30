@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render,redirect
 from .models import *
 from django.http import HttpResponse
@@ -100,10 +101,13 @@ def add_review(request):
         stars = int(stars)
         recaptcha_valid = validate_recaptcha(recaptcha_response)
         if not recaptcha_valid:
-            return HttpResponse("reCAPTCHA validation failed.")
+            messages.info(request, "Invalid Captcha. Please Try Again!")
+            return redirect('add_review')
 
-        # if not (name and title and testimonial and image and stars):
-        #     return HttpResponse("Please fill out all fields.")
+
+        if not (name and title and testimonial and image and stars):
+            messages.info(request, "Please fill out all fields.")
+            return redirect('add_review')
 
         Testimonial.objects.create(
             name=name,
@@ -112,6 +116,8 @@ def add_review(request):
             stars=stars,
             image=image,
         )
+        messages.info(request, "Testimonial submitted for admin's approval. Thank you!")
+
         return HttpResponse("Testimonial submitted successfully.")
     else:
         recaptcha_site_key = settings.RECAPTCHA_SITE_KEY
