@@ -10,7 +10,7 @@ admin.site.unregister(User)
 
 
 admin.site.register(Slider)
-admin.site.register(Testimonial)
+# admin.site.register(Testimonial)
 admin.site.register(Partner)
 admin.site.register(Contact)
 
@@ -31,7 +31,9 @@ class EventAdmin(SummernoteModelAdmin):
     summernote_fields = ('description',) 
 admin.site.register(Event,EventAdmin)
 
-
+class TestimonialAdmin(SummernoteModelAdmin):
+    list_display = ('name','title', 'stars','active')
+admin.site.register(Testimonial,TestimonialAdmin)
 
 
 class RcsAdmin(SummernoteModelAdmin):
