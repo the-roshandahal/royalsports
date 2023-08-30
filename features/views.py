@@ -98,9 +98,9 @@ def add_review(request):
         stars = request.POST.get('stars')
         image = request.FILES['image']
         stars = int(stars)
-        # recaptcha_valid = validate_recaptcha(recaptcha_response)
-        # if not recaptcha_valid:
-        #     return HttpResponse("reCAPTCHA validation failed.")
+        recaptcha_valid = validate_recaptcha(recaptcha_response)
+        if not recaptcha_valid:
+            return HttpResponse("reCAPTCHA validation failed.")
 
         # if not (name and title and testimonial and image and stars):
         #     return HttpResponse("Please fill out all fields.")
@@ -112,10 +112,13 @@ def add_review(request):
             stars=stars,
             image=image,
         )
-
         return HttpResponse("Testimonial submitted successfully.")
-    
-    return render(request, 'add_review.html')
+    else:
+        recaptcha_site_key = settings.RECAPTCHA_SITE_KEY
+        context = {
+            'recaptcha_site_key':recaptcha_site_key
+        }
+        return render(request, 'add_review.html',context)
 
 def validate_recaptcha(recaptcha_response):
     if not recaptcha_response:
