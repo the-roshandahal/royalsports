@@ -14,6 +14,7 @@ urlpatterns = [
     path("gallery_details/<int:id>", views.gallery_details, name="gallery_details"),
     path("participation", views.participation, name="participation"),
     path("events", views.events, name="events"),
+    path("add_review", views.add_review, name="add_review"),
 
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
     re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),

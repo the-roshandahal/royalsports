@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#jxjdgf2!04_jt_r@x2yh)1a#^f_)$r@je33+48l#lx3ej-d1)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -85,7 +85,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# 6LfSMOcnAAAAAE549vIS6E5AmBytg0W_9RwDiypS
 
+# 6LfSMOcnAAAAANwgRLa-2OIhIwtoWEjy7HSuT53L
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -104,6 +106,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+# recaptcha setup
+
+# RECAPTCHA_SITE_KEY = '6LfSMOcnAAAAAE549vIS6E5AmBytg0W_9RwDiypS'
+# RECAPTCHA_SECRET_KEY = '6LfSMOcnAAAAANwgRLa-2OIhIwtoWEjy7HSuT53L'
+
+RECAPTCHA_SITE_KEY = '6LeeP-cnAAAAAPJugeGZCjt0H6VA17mq46bVyiIn'
+RECAPTCHA_SECRET_KEY = '6LeeP-cnAAAAADO5M5Cgl6cspgp-_YLTsCsBYYeB'
 
 
 # Internationalization

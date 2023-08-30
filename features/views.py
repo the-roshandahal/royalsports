@@ -1,5 +1,9 @@
 from django.shortcuts import render,redirect
 from .models import *
+from django.http import HttpResponse
+from django.core.exceptions import ValidationError
+from django.conf import settings
+import requests
 # Create your views here.
 
 
@@ -79,3 +83,50 @@ def events(request):
         'events':events
     }
     return render(request,'events.html',context)
+
+
+
+
+
+
+def add_review(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        title = request.POST.get('title')
+        testimonial = request.POST.get('testimonial')
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        stars = request.POST.get('stars')
+        image = request.FILES['image']
+        stars = int(stars)
+        # recaptcha_valid = validate_recaptcha(recaptcha_response)
+        # if not recaptcha_valid:
+        #     return HttpResponse("reCAPTCHA validation failed.")
+
+        # if not (name and title and testimonial and image and stars):
+        #     return HttpResponse("Please fill out all fields.")
+
+        Testimonial.objects.create(
+            name=name,
+            title=title,
+            testimonial=testimonial,
+            stars=stars,
+            image=image,
+        )
+
+        return HttpResponse("Testimonial submitted successfully.")
+    
+    return render(request, 'add_review.html')
+
+def validate_recaptcha(recaptcha_response):
+    if not recaptcha_response:
+        return False
+
+    payload = {
+        'secret': settings.RECAPTCHA_SECRET_KEY,
+        'response': recaptcha_response,
+    }
+
+    response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload)
+    result = response.json()
+
+    return result.get('success', False)
