@@ -76,7 +76,8 @@ class Testimonial(models.Model):
 
     image = models.ImageField(upload_to="testimonial_images/",verbose_name="Testimonial Image (94*125)")
     stars = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-    
+    active = models.BooleanField(default=True)
+
     def __str__(self):
         return self.title
     class Meta:

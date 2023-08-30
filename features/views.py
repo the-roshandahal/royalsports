@@ -9,7 +9,7 @@ import requests
 
 def home(request):
     blogs = Blog.objects.all()[:3]
-    testimonials = Testimonial.objects.all()
+    testimonials = Testimonial.objects.filter(active=True)
     sliders = Slider.objects.all()
     partners = Partner.objects.all()
     try:
