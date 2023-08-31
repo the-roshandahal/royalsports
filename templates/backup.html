@@ -1,0 +1,109 @@
+
+<style>
+
+    .moving-text-container {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+    .moving-text-container::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+    
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .marquee-container {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        width: 100%;
+        white-space: nowrap;
+        animation: marqueeAnim 5s linear infinite;
+      }
+      .marquee {
+        
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+      }
+      @keyframes marqueeAnim {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(calc(-100% + 100vw));
+        }
+      }
+    
+      /* Styles for the first section (visible on all devices except mobile) */
+    .section {
+        display: block; /* Set to 'none' on mobile devices */
+    }
+    .banner{
+            display: none; /* Show the second section on mobile devices */
+        }
+    
+    /* Styles for the second section (visible on mobile devices only) */
+    @media (max-width: 426px) {
+        .section {
+            display: none; /* Hide on devices with a max-width of 767px (mobile devices) */
+        }
+        .banner{
+            display: block; /* Show the second section on mobile devices */
+        }
+    }
+    
+    </style>
+    
+    
+    
+    {% for slider in sliders %}
+    <section class="section">
+        <div class="moving-text-container">
+            <div class="background-image" style="background-image: url('{{slider.image.url}}');"></div>
+            <div class="marquee-container">
+                <div class="marquee"></div>
+                <h2 class="section-title marquee">{{slider.sub_heading_text}}</h2>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    <section class="banner">
+    
+        <div class="banner-slider">
+            <div class="swiper-wrapper">
+    
+                {% for slider in sliders %}
+                <div class="swiper-slide">
+                    <div class="banner-section banner-section-two banner-section-homepage">
+                        <div class="banner-bg bg-overlay-black bg_img" data-background="{{slider.mobile_image.url}}"></div>
+                        <div class="banner-text-group">
+                            <div class="row justify-content-center align-items-end mb-30-none">
+                                <div class="col-xl-12 col-lg-12 text-center mb-30">
+                                    <div class="banner-content" data-aos="zoom-in-up" data-aos-duration="1000">
+                                        <h3 class="inner-title">{{slider.sub_heading_text}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    
+    
