@@ -79,7 +79,7 @@ def participation(request):
 
 
 def events(request):
-    events = Event.objects.all()
+    events = Event.objects.all().order_by('-id')
     context = {
         'events':events
     }
