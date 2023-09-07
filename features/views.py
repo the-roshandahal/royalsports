@@ -138,3 +138,21 @@ def validate_recaptcha(recaptcha_response):
     result = response.json()
 
     return result.get('success', False)
+
+
+
+def blogs(request):
+    blogs = Blog.objects.all()
+    context = {
+        'blogs':blogs
+    }
+    return render(request,'blogs.html',context)
+
+
+def blog_details(request, slug):
+    blog_details = Blog.objects.get(slug=slug)
+    print(blog_details)
+    context = {
+        'blog':blog_details
+    }
+    return render(request,'blog_details.html',context)

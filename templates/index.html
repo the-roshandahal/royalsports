@@ -18,17 +18,17 @@
       top: 88%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
+      color: #d9b45b;
       text-align: center;
     }
     .marquee {
       position: absolute;
       top: 88%;
-      color: white;
+      color: #d9b45b;
     }
   
     .overlay-par {
-        color: white;
+        color: #d9b45b;
     }
     @media only screen and (max-width: 991px){
         .overlay-par {
@@ -163,7 +163,7 @@
                                     <div class="blog-post-meta">
                                         <span class="user">By : Admin</span>
                                     </div>
-                                    <h3 class="title"><a href="">{{blog.title}}</a></h3>
+                                    <h3 class="title"><a href="{% url 'blog_details' slug=blog.slug %}">{{blog.title}}</a></h3>
                                 </div>
                             </div>
                         </div>

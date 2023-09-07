@@ -1,0 +1,26 @@
+{% include 'header.html'   %}
+<section class="blog-section blog-classic blog-details ptb-120">
+    <div class="container">
+        <div class="row justify-content-center mb-30-none">
+            <div class="col-xl-12 col-lg-12 mb-30">
+                <div class="row justify-content-center mb-30-none">
+                    <div class="col-xl-12 mb-30">
+                        <div class="blog-item">
+                            <div class="blog-thumb">
+                                <img src="{{blog.image.url}}" alt="blog">
+                                <div class="blog-date">
+                                    <span>{{blog.created}}</span>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <h3 class="title">{{blog.title}}</h3>
+                                <p>{{blog.blog|safe}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'footer.html'   %}
