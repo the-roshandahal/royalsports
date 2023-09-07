@@ -58,13 +58,16 @@ class Slider(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=200)
     blog = models.TextField()
-    image = models.ImageField(upload_to="blogs_images/",verbose_name="Blog Image (370*270)")
-    slug = AutoSlugField(populate_from='title', unique=True)
+    image = models.ImageField(upload_to="blogs_images/", verbose_name="Blog Image (370*270)")
+    slug = AutoSlugField(populate_from='title', unique=True, always_update=True)
     created = models.DateField(auto_now_add=True)
+    
     def __str__(self):
         return self.title
+    
     class Meta:
-        verbose_name_plural = "04. Blogs" 
+        verbose_name_plural = "04. Blogs"
+
 
 
 

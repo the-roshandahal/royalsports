@@ -149,7 +149,7 @@ def blogs(request):
     return render(request,'blogs.html',context)
 
 
-def blog_details(request, slug):
+def blog(request, slug):
     blog_details = Blog.objects.get(slug=slug)
     print(blog_details)
     context = {

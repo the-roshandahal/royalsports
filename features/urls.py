@@ -19,7 +19,7 @@ urlpatterns = [
     
     
     path("blogs", views.blogs, name="blogs"),
-    path("blog_details/<str:slug>", views.blog_details, name="blog_details"),
+    path("blog/<str:slug>", views.blog, name="blog"),
 
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
     re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
