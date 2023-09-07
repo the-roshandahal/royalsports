@@ -21,6 +21,11 @@
       color: white;
       text-align: center;
     }
+    .marquee {
+      position: absolute;
+      top: 88%;
+      color: white;
+    }
   
     .overlay-par {
         color: white;
@@ -62,11 +67,16 @@
     <section class="section">
         <div class="image-container">
             <img src="{{slider.image.url}}" alt="Banner Image">
-            <div class="text-overlay">
-                <div class="section-header">
+            <marquee direction="right" class="marquee"
+                    behavior="alternate"
+                    scrollamount="20">
                     <h2 class="section-title overlay-par">{{slider.sub_heading_text}}</h2>
+            </marquee>
+            <!-- <div class="text-overlay">
+                <div class="section-header">
                 </div>
-            </div>
+                <h2 class="section-title overlay-par">{{slider.sub_heading_text}}</h2>
+            </div> -->
         </div>
     </section>
     {% endfor %}
