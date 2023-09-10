@@ -55,7 +55,7 @@ def join_rsc(request):
 
 
 def gallery(request):
-    gallerys = Gallery.objects.all()
+    gallerys = Gallery.objects.all().order_by('-id')
     context = {
         'gallerys':gallerys
     }

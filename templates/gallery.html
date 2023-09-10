@@ -12,14 +12,12 @@
             {% for gallery in gallerys %}
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
                 <div class="training-item aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="training-thumb">
+                    <div class="training-thumb" style="width: 350px; height: 233px; overflow: hidden;">
                         {% for image in gallery.galleryimage_set.all %}
                         {% if forloop.first %}
-                            <img src="{{ image.image.url }}" alt="training">
+                        <img src="{{ image.image.url }}" alt="training" style="width: 100%; height: auto;">
+    
                         {% else %}
-                        {% endif %}
-                        {% if forloop.counter == 1 %}
-                            {# Only the first image is handled, then break out of the loop #}
                         {% endif %}
                         {% endfor %}
                     </div>
