@@ -118,7 +118,7 @@ def add_review(request):
             active=True,
         )
         messages.info(request, "Testimonial submitted for admin's approval. Thank you!")
-        return redirect('join_rsc')
+        return redirect('home')
     else:
         recaptcha_site_key = settings.RECAPTCHA_SITE_KEY
         context = {
