@@ -115,6 +115,7 @@ def add_review(request):
             testimonial=testimonial,
             stars=stars,
             image=image,
+            active=True,
         )
         messages.info(request, "Testimonial submitted for admin's approval. Thank you!")
         return redirect('join_rsc')
