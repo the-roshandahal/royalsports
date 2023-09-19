@@ -11,8 +11,8 @@
                     {% for blog in blogs %}
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 mb-30">
                         <div class="blog-item">
-                            <div class="blog-thumb">
-                                <img src="{{blog.image.url}}" alt="blog">
+                            <div class="blog-thumb" style="width: 350px; height: 233px; overflow: hidden;">
+                                <img src="{{blog.image.url}}" alt="blog" style="width: 100%; height: auto;">
                                 <div class="blog-date">
                                     <span>{{blog.created}}</span>
                                 </div>

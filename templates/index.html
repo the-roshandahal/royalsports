@@ -141,11 +141,10 @@
         </div>
     </section>
 
-    <section class="blog-section ptb-120">
+    <!-- <section class="blog-section ptb-120">
         <div class="container">
             <div class="section-header aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
                 <h2 class="section-title">OUR <span>NEWS/</span>UPDATES</h2>
-                <!-- <p>Fight School has specialized in martial arts since 1986 and has one of the most innovative programs in the nation.</p> -->
             </div>
             <div class="row justify-content-center mb-30-none">
                 <div class="col-xl-12 col-lg-12 mb-30">
@@ -173,9 +172,65 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+
+
+    <section class="client-section ptb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-header-wrapper">
+                        <div class="section-header aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                            <h2 class="section-title">OUR <span>BLOGS</span> </h2>
+                            <!-- <p>Fight School has specialized in martial arts since 1986 and has one of the most innovative programs in the nation.</p> -->
+                        </div>
+                        <div class="slider-nav-area aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
+                            <div class="slider-prev" tabindex="0" role="button" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <div class="slider-next" tabindex="0" role="button" aria-label="Next slide">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="client-area">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="client-slider-two swiper-container-horizontal aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="swiper-wrapper" style="transform: translate3d(-1900px, 0px, 0px); transition-duration: 0ms;">
+                                
+                                
+                                {% for blog in blogs %}
+                                <div class="swiper-slide" data-swiper-slide-index="0">
+                                    <div class="blog-item p-5">
+                                        <div class="blog-thumb" style="width: 350px; height: 233px; overflow: hidden;">
+                                            <img src="{{blog.image.url}}" alt="blog" style="width: 100%; height: auto;">
+                                            <div class="blog-date">
+                                                <span>{{blog.created}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="blog-post-meta">
+                                                <span class="user">By : Admin</span>
+                                            </div>
+                                            <h3 class="title"><a href="{% url 'blog' slug=blog.slug %}">{{blog.title}}</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                
+                            </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    </div>
+                    <a href="{% url 'blogs' %}" class="btn--base mt-5">View All <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
     </section>
-
-
 
     <section class="client-section ptb-120">
         <div class="container">
