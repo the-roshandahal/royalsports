@@ -9,7 +9,7 @@ import requests
 
 
 def home(request):
-    blogs = Blog.objects.all()[:3]
+    blogs = Blog.objects.all().order_by('-id')
     testimonials = Testimonial.objects.filter(active=True)
     sliders = Slider.objects.all()
     partners = Partner.objects.all()
@@ -17,7 +17,6 @@ def home(request):
         home = HomeContent.objects.all()[:1].get()
     except HomeContent.DoesNotExist:
         home = None
-
 
     context = {
         'sliders':sliders,
