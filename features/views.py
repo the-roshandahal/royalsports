@@ -70,7 +70,7 @@ def gallery_details(request,id):
 
 
 def participation(request):
-    participations = Participation.objects.all()
+    participations = Participation.objects.all().order_by('-id')
     context = {
         'participations':participations
     }
